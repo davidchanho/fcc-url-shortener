@@ -1,13 +1,6 @@
-function isUrl(string) {
-  let url;
-
-  try {
-    url = new URL(string);
-  } catch (_) {
-    return false;
-  }
-
-  return url.protocol === "http:" || url.protocol === "https:";
+function isUrl(url) {
+  const regex = /^[http://www.]/gi;
+  return url.match(regex);
 }
 
 module.exports = isUrl;
